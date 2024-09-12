@@ -1,6 +1,7 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../modal/modal.component';
 
 
 @Component({
@@ -11,6 +12,9 @@ import { provideNativeDateAdapter } from '@angular/material/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormBuscaComponent {
-  readonly date = new FormControl(new Date());
+  readonly dialog = inject(MatDialog);
 
+  openDialog() {
+    this.dialog.open(ModalComponent);
+  }
 }

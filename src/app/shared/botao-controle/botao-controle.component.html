@@ -1,0 +1,9 @@
+<button 
+    [ngClass]="operacao" 
+    mat-mini-fab
+    >
+    <img 
+        [src]="operacao === 'decrementar' ? 'assets/icones/do_not_disturb_on.png' : 'assets/icones/add_circle.png'" 
+        [alt]="operacao === 'decrementar' ? 'Operador de subtração' : 'Operador de adição'"
+        >
+</button>

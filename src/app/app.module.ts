@@ -23,6 +23,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalComponent } from './shared/modal/modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BotaoControleComponent } from './shared/botao-controle/botao-controle.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     CardBuscaComponent,
     CardDepoimentoComponent,
-    FormBuscaComponent
+    FormBuscaComponent,
+    ModalComponent,
+    BotaoControleComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatDatepickerModule,
     FormsModule,
     ReactiveFormsModule,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()
