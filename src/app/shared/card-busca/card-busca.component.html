@@ -1,11 +1,11 @@
 <mat-card class="card-busca" appearance="outlined">
   <img 
-    mat-card-image src="assets/imagens/Veneza.png" 
+    mat-card-image src="{{ promocao.imagem }}"
     alt="Imagem de Veneza">
   <mat-card-content>
     <ul>
-        <li>Veneza</li>
-        <li>R$ 500</li>
+        <li>{{ promocao.destino }}</li>
+        <li>R$ {{ promocao.preco.toLocaleString('pt-BR', { minimumFractionDigits: 2 }) }}</li>
     </ul>
   </mat-card-content>
   <mat-card-actions>
