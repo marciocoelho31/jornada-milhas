@@ -1,6 +1,7 @@
 <button 
     [ngClass]="operacao" 
     mat-mini-fab
+    (click)="formBuscaService.alterarQuantidade(operacao, controle)"
     >
     <img 
         [src]="operacao === 'decrementar' ? 'assets/icones/do_not_disturb_on.png' : 'assets/icones/add_circle.png'" 

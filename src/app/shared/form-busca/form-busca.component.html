@@ -2,9 +2,7 @@
     <form [formGroup]="formBuscaService.formBusca">
         <h2>PASSAGENS</h2>
         <div class="flex-container">
-            <mat-button-toggle-group 
-                aria-label="Tipo de passagem" 
-                formControlName="somenteIda">
+            <mat-button-toggle-group aria-label="Tipo de passagem" formControlName="somenteIda">
                 <mat-button-toggle [value]="false">
                     IDA E VOLTA
                 </mat-button-toggle>
@@ -12,9 +10,17 @@
                     SOMENTE IDA
                 </mat-button-toggle>
             </mat-button-toggle-group>
-            <mat-chip-listbox (click)="openDialog()" aria-label="Seleção de passagens">
-                <mat-chip-option selected>1 adulto</mat-chip-option>
-                <mat-chip-option>Econômica</mat-chip-option>
+            <mat-chip-listbox (click)="formBuscaService.openDialog()" aria-label="Seleção de passagens">
+                <mat-chip (click)="formBuscaService.openDialog()">
+                    <div class="inner">
+                        <mat-icon>check</mat-icon> {{ formBuscaService.getDescricaoPassageiros() }}
+                    </div>
+                </mat-chip>
+                <mat-chip (click)="formBuscaService.openDialog()">
+                    <div class="inner">
+                        <mat-icon>check</mat-icon> Econômica
+                    </div>
+                </mat-chip>
             </mat-chip-listbox>
         </div>
         <div class="flex-container">

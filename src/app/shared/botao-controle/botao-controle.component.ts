@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { FormBuscaService } from '../../core/services/form-busca.service';
 
 @Component({
   selector: 'app-botao-controle',
@@ -7,7 +8,10 @@ import { Component, Input } from '@angular/core';
 })
 export class BotaoControleComponent {
   @Input() operacao: string = '';
+  @Input() controle: string = '';
   @Input() icone: string = '';
   @Input() alt: string = '';
+
+  constructor(public formBuscaService: FormBuscaService) { }
 
 }
