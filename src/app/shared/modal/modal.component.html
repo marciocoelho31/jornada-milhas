@@ -2,33 +2,21 @@
     <h2 mat-dialog-title>Viajante</h2>
     <mat-dialog-content>
         <div class="selecao-idade">
-            <ul>
-                <li><strong>Adultos</strong></li>
-                <li>(Acima de 12 anos)</li>
-                <li>
-                    <app-botao-controle operacao="decrementar" controle="qAdultos"></app-botao-controle>
-                    <span>{{ formBuscaService.getQtdAdultos() }}</span>
-                    <app-botao-controle operacao="incrementar" controle="qAdultos"></app-botao-controle>
-                </li>
-            </ul>
-            <ul>
-                <li><strong>Crianças</strong></li>
-                <li>(Entre 2 e 11 anos)</li>
-                <li>
-                    <app-botao-controle operacao="decrementar" controle="qCriancas"></app-botao-controle>
-                    <span>{{ formBuscaService.getQtdCriancas() }}</span>
-                    <app-botao-controle operacao="incrementar" controle="qCriancas"></app-botao-controle>
-                </li>
-            </ul>
-            <ul>
-                <li><strong>Bebês</strong></li>
-                <li>(Até 2 anos)</li>
-                <li>
-                    <app-botao-controle operacao="decrementar" controle="qBebes"></app-botao-controle>
-                    <span>{{ formBuscaService.getQtdBebes() }}</span>
-                    <app-botao-controle operacao="incrementar" controle="qBebes"></app-botao-controle>
-                </li>
-            </ul>
+            <app-seletor-passageiro
+                [formControl]="formBuscaService.formBusca.get('qAdultos')?.value"
+                titulo="Adultos"
+                subtitulo="(Acima de 12 anos)"
+            ></app-seletor-passageiro>
+            <app-seletor-passageiro
+                [formControl]="formBuscaService.formBusca.get('qCriancas')?.value"
+                titulo="Crianças"
+                subtitulo="(Entre 2 e 11 anos)"
+            ></app-seletor-passageiro>
+            <app-seletor-passageiro
+                [formControl]="formBuscaService.formBusca.get('qBebes')?.value"
+                titulo="Bebês"
+                subtitulo="(Até 2 anos)"
+            ></app-seletor-passageiro>
         </div>
         <div class="selecao-categoria">
             <p><strong>Categoria</strong></p>

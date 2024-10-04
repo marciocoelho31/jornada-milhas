@@ -29,6 +29,7 @@ import { BotaoControleComponent } from './shared/botao-controle/botao-controle.c
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf.component';
+import { SeletorPassageiroComponent } from './shared/seletor-passageiro/seletor-passageiro.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { DropdownUfComponent } from './shared/form-busca/dropdown-uf/dropdown-uf
     FormBuscaComponent,
     ModalComponent,
     BotaoControleComponent,
-    DropdownUfComponent
+    DropdownUfComponent,
+    SeletorPassageiroComponent
   ],
   imports: [
     BrowserModule,
